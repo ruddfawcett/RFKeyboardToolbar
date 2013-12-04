@@ -9,7 +9,8 @@
 
 @implementation RFToolbarButton
 
-static id<UITextInput> textInput = NULL;
+static UITextView *textView = NULL;
+static UITextField *textField = NULL;
 
 - (id)init
 {
@@ -34,12 +35,20 @@ static id<UITextInput> textInput = NULL;
     return self;
 }
 
-+ (void)setTextInputForButton:(id<UITextInput>)sentTextInput {
-    textInput = sentTextInput;
++ (void)setTextViewForButton:(UITextView*)textViewPassed {
+    textView = textViewPassed;
 }
 
-+ (id<UITextInput>)textInput {
-    return textInput;
++ (UITextView*)textView {
+    return textView;
+}
+
++ (void)setTextFieldForButton:(UITextField*)textFieldPassed {
+    textField = textFieldPassed;
+}
+
++ (UITextField*)textField {
+    return textField;
 }
 
 - (NSString*)titleForButton {

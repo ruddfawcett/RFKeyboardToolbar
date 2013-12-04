@@ -13,7 +13,10 @@
 -(NSString*)titleForButton;
 -(void)buttonTarget;
 
-+(void)setTextInputForButton:(id<UITextInput>)sentTextInput;
-+(id<UITextInput>)textInput;
++ (void)setTextViewForButton:(UITextView*)textViewPassed;
++ (UITextView*)textView;
+
++ (void)setTextFieldForButton:(UITextField*)textFieldPassed;
++ (UITextField*)textField;
 
 @end

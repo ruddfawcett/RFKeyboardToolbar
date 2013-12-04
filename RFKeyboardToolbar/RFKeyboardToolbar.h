@@ -10,8 +10,7 @@
 
 @interface RFKeyboardToolbar : UIView <UITextViewDelegate, UITextFieldDelegate>
 
-@property (nonatomic,readwrite) id<UITextInput> textInput;
-
-+(void)addToolbarTo:(id<UITextInput>)textInput withButtons:(NSArray*)buttons;
++(void)addToTextView:(UITextView*)textView withButtons:(NSArray*)buttons;
++(void)addToTextField:(UITextField*)textField withButtons:(NSArray*)buttons;
 
 @end

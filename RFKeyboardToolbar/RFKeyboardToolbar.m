@@ -28,13 +28,18 @@
     return self;
 }
 
-+ (void)addToolbarTo:(UIResponder<UITextInput> *)textInput withButtons:(NSArray *)buttons {
-    [RFToolbarButton setTextInputForButton:(id)textInput];
-    
++ (void)addToTextView:(UITextView*)textView withButtons:(NSArray *)buttons {
+    [RFToolbarButton setTextViewForButton:textView];
     RFKeyboardToolbar *keyboardToolbar = [[RFKeyboardToolbar alloc] initWithButtons:buttons];
-    [keyboardToolbar setTextInput:(id)textInput];
     
-    [(id)textInput setInputAccessoryView:keyboardToolbar];
+    [textView setInputAccessoryView:keyboardToolbar];
+}
+
++ (void)addToTextField:(UITextField *)textField withButtons:(NSArray *)buttons {
+    [RFToolbarButton setTextFieldForButton:textField];
+    RFKeyboardToolbar *keyboardToolbar = [[RFKeyboardToolbar alloc] initWithButtons:buttons];
+    
+    [textField setInputAccessoryView:keyboardToolbar];
 }
 
 - (void)layoutSubviews {
