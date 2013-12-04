@@ -37,11 +37,13 @@ RFKeyboardToolbar is pretty easy to use with either you're UITextFields or UITex
     _textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     // The underscore is to access the UITextView variable set in the @interface (you can see this in the demo)
     
-    [RFKeyboardToolbar addToolbarTo:_textView withButtons:@[exampleButton]];
-    // Here's where the magic happens.  Just call [RFKeyboardToolbar addToolbarTo:UITextView/Field withButtons:array]
+    [RFKeyboardToolbar addToTextView:_textView withButtons:@[exampleButton]];
+    // Here's where the new magic happens (previously you could use UITextInput, and not have to worry about adding it for a UITextView/UIToolbar)**
     // The array is the arry of buttons you created and have "newed" above.  They will appear in the order you
     // add them from left to right.  You can access the textfield/view in the button subclasses to insert text
     // or do whatever you want via [RFToolbarButton textInput].  But you can see this in the example as well.
+    
+    // ** while working on RFMarkdownTextView, I realized that UITextInput is much less documented, and this isn't that much different, so I went with this.
     
     [self.view addSubview:_textView];
     // Add the textview and enjoy!
