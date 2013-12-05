@@ -54,7 +54,7 @@ Hope you enjoy it!  Please Fork and send Pull Requests!
 ##Screenshots
 
 ![RFMarkdownTextView](http://i.imgur.com/NEAocbW.png)
-![RFKeyboardToolbarDemo](http://i.imgur.com/WmMIPyV.png)
+![RFKeyboardToolbarDemo](http://i.imgur.com/LvD0GqC.png)
 
 ##License
 
