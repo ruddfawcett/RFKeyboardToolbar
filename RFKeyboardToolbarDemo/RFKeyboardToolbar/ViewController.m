@@ -26,7 +26,7 @@
     
     _textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     
-    [RFKeyboardToolbar addToolbarTo:_textView withButtons:@[exampleButton]];
+    [RFKeyboardToolbar addToTextView:_textView withButtons:@[exampleButton]];
     
     [self.view addSubview:_textView];
 }

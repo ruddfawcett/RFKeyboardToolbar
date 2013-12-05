@@ -14,7 +14,7 @@
 }
 
 - (void)buttonTarget {
-    [[RFToolbarButton textInput] insertText:@"Example text."];
+    [[RFToolbarButton textView] insertText:@"Example text."];
 }
 
 @end
