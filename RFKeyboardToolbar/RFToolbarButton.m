@@ -1,4 +1,4 @@
-/
+//
 //  RFToolbarButton.m
 //
 //  Created by Rex Finn on 12/3/13.
@@ -10,6 +10,8 @@
 @interface RFToolbarButton ()
 
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, copy) textFieldBlock textFieldBlock;
+@property (nonatomic, copy) textViewBlock textViewBlock;
 
 @end
 
@@ -41,10 +43,26 @@
         
         self.titleLabel.font = [UIFont boldSystemFontOfSize:14.f];
         self.titleLabel.textColor = [UIColor colorWithWhite:0.500 alpha:1.0];
-        
-        [self addTarget:self action:@selector(buttonTarget) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+-(void)setButtonPressedTextFieldBlock:(textFieldBlock)completionBlock {
+    self.textFieldBlock = completionBlock;
+    [self addTarget:self action:@selector(callTextFieldBlock) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)callTextFieldBlock {
+    self.textFieldBlock(self.textField);
+}
+
+-(void)setButtonPressedTextViewBlock:(textViewBlock)completionBlock {
+    self.textViewBlock = completionBlock;
+    [self addTarget:self action:@selector(callTextViewBlock) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)callTextViewBlock {
+    self.textViewBlock(self.textView);
 }
 
 @end
