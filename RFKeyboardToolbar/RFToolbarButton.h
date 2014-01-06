@@ -10,13 +10,9 @@
 
 @interface RFToolbarButton : UIButton
 
--(NSString*)titleForButton;
--(void)buttonTarget;
++(instancetype)buttonWithTitle:(NSString *)title;
 
-+ (void)setTextViewForButton:(UITextView*)textViewPassed;
-+ (UITextView*)textView;
-
-+ (void)setTextFieldForButton:(UITextField*)textFieldPassed;
-+ (UITextField*)textField;
+@property (nonatomic, weak) UITextView *textView;
+@property (nonatomic, weak) UITextField *textField;
 
 @end
