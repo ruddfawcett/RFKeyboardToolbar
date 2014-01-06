@@ -41,6 +41,8 @@
         
         self.titleLabel.font = [UIFont boldSystemFontOfSize:14.f];
         self.titleLabel.textColor = [UIColor colorWithWhite:0.500 alpha:1.0];
+        
+        [self addTarget:self action:@selector(buttonTarget) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
