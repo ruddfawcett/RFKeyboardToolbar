@@ -9,12 +9,8 @@
 
 @implementation RFExampleToolbarButton
 
-- (NSString*)titleForButton {
-    return @"Example";
-}
-
 - (void)buttonTarget {
-    [[RFToolbarButton textView] insertText:@"Example text."];
+    [self.textView insertText:@"Example text."];
 }
 
 @end
