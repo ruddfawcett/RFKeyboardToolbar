@@ -15,4 +15,6 @@
 @property (nonatomic, weak) UITextView *textView;
 @property (nonatomic, weak) UITextField *textField;
 
+-(void)buttonTarget;
+
 @end
