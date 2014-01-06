@@ -22,7 +22,7 @@
     
     self.title = @"RFKeyboardToolbar";
     
-    RFExampleToolbarButton *exampleButton = [RFExampleToolbarButton new];
+    RFExampleToolbarButton *exampleButton = [RFExampleToolbarButton buttonWithTitle:@"Example"];
     
     _textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     
