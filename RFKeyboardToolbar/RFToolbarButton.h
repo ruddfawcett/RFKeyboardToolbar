@@ -8,15 +8,17 @@
 #import <UIKit/UIKit.h>
 #import "RFKeyboardToolbar.h"
 
+typedef void (^textFieldBlock)(UITextField *textField);
+typedef void (^textViewBlock)(UITextView *textView);
+
 @interface RFToolbarButton : UIButton
 
--(NSString*)titleForButton;
--(void)buttonTarget;
++(instancetype)buttonWithTitle:(NSString *)title;
 
-+ (void)setTextViewForButton:(UITextView*)textViewPassed;
-+ (UITextView*)textView;
+-(void)setButtonPressedTextFieldBlock:(textFieldBlock)completionBlock;
+-(void)setButtonPressedTextViewBlock:(textViewBlock)completionBlock;
 
-+ (void)setTextFieldForButton:(UITextField*)textFieldPassed;
-+ (UITextField*)textField;
+@property (nonatomic, weak) UITextView *textView;
+@property (nonatomic, weak) UITextField *textField;
 
 @end

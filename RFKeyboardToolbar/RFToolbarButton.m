@@ -7,14 +7,28 @@
 
 #import "RFToolbarButton.h"
 
+@interface RFToolbarButton ()
+
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, copy) textFieldBlock textFieldBlock;
+@property (nonatomic, copy) textViewBlock textViewBlock;
+
+@end
+
 @implementation RFToolbarButton
 
-static UITextView *textView = NULL;
-static UITextField *textField = NULL;
++(instancetype)buttonWithTitle:(NSString *)title {
+    return [[self alloc] initWithTitle:title];
+}
+
+-(id)initWithTitle:(NSString *)title {
+    _title = title;
+    return [self init];
+}
 
 - (id)init
 {
-    CGSize sizeOfText = [[self titleForButton] sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:14.f]}];
+    CGSize sizeOfText = [self.title sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:14.f]}];
     
     self = [super initWithFrame:CGRectMake(0, 0, sizeOfText.width + 18.104, sizeOfText.height + 10.298)];
     if (self) {
@@ -24,37 +38,31 @@ static UITextField *textField = NULL;
         self.layer.borderWidth = 1.0f;
         self.layer.borderColor = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
         
-        [self setTitle:[self titleForButton] forState:UIControlStateNormal];
+        [self setTitle:self.title forState:UIControlStateNormal];
         [self setTitleColor:[UIColor colorWithWhite:0.500 alpha:1.0] forState:UIControlStateNormal];
         
         self.titleLabel.font = [UIFont boldSystemFontOfSize:14.f];
         self.titleLabel.textColor = [UIColor colorWithWhite:0.500 alpha:1.0];
-        
-        [self addTarget:self action:@selector(buttonTarget) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
 
-+ (void)setTextViewForButton:(UITextView*)textViewPassed {
-    textView = textViewPassed;
+-(void)setButtonPressedTextFieldBlock:(textFieldBlock)completionBlock {
+    self.textFieldBlock = completionBlock;
+    [self addTarget:self action:@selector(callTextFieldBlock) forControlEvents:UIControlEventTouchUpInside];
 }
 
-+ (UITextView*)textView {
-    return textView;
+-(void)callTextFieldBlock {
+    self.textFieldBlock(self.textField);
 }
 
-+ (void)setTextFieldForButton:(UITextField*)textFieldPassed {
-    textField = textFieldPassed;
+-(void)setButtonPressedTextViewBlock:(textViewBlock)completionBlock {
+    self.textViewBlock = completionBlock;
+    [self addTarget:self action:@selector(callTextViewBlock) forControlEvents:UIControlEventTouchUpInside];
 }
 
-+ (UITextField*)textField {
-    return textField;
+-(void)callTextViewBlock {
+    self.textViewBlock(self.textView);
 }
-
-- (NSString*)titleForButton {
-    return nil;
-}
-
--(void)buttonTarget {}
 
 @end

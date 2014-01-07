@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RFKeyboardToolbar.h"
-#import "RFExampleToolbarButton.h"
+#import "RFToolbarButton.h"
 
 @interface ViewController : UIViewController
 

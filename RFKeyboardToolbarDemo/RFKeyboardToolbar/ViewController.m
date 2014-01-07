@@ -22,11 +22,15 @@
     
     self.title = @"RFKeyboardToolbar";
     
-    RFExampleToolbarButton *exampleButton = [RFExampleToolbarButton new];
+    RFToolbarButton *exampleButton = [RFToolbarButton buttonWithTitle:@"Example"];
     
     _textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     
     [RFKeyboardToolbar addToTextView:_textView withButtons:@[exampleButton]];
+    
+    [exampleButton setButtonPressedTextViewBlock:^(UITextView *textField) {
+                textView.text = @"you pressed the button!";
+            }];
     
     [self.view addSubview:_textView];
 }
