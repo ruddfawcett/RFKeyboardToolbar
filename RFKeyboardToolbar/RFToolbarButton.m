@@ -10,18 +10,17 @@
 @interface RFToolbarButton ()
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, copy) textFieldBlock textFieldBlock;
-@property (nonatomic, copy) textViewBlock textViewBlock;
+@property (nonatomic, copy) eventHandlerBlock buttonPressBlock;
 
 @end
 
 @implementation RFToolbarButton
 
-+(instancetype)buttonWithTitle:(NSString *)title {
++ (instancetype)buttonWithTitle:(NSString *)title {
     return [[self alloc] initWithTitle:title];
 }
 
--(id)initWithTitle:(NSString *)title {
+- (id)initWithTitle:(NSString *)title {
     _title = title;
     return [self init];
 }
@@ -47,22 +46,13 @@
     return self;
 }
 
--(void)setButtonPressedTextFieldBlock:(textFieldBlock)completionBlock {
-    self.textFieldBlock = completionBlock;
-    [self addTarget:self action:@selector(callTextFieldBlock) forControlEvents:UIControlEventTouchUpInside];
+- (void)addEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvent {
+    self.buttonPressBlock = eventHandler;
+    [self addTarget:self action:@selector(buttonPressed) forControlEvents:controlEvent];
 }
 
--(void)callTextFieldBlock {
-    self.textFieldBlock(self.textField);
-}
-
--(void)setButtonPressedTextViewBlock:(textViewBlock)completionBlock {
-    self.textViewBlock = completionBlock;
-    [self addTarget:self action:@selector(callTextViewBlock) forControlEvents:UIControlEventTouchUpInside];
-}
-
--(void)callTextViewBlock {
-    self.textViewBlock(self.textView);
+- (void)buttonPressed {
+    self.buttonPressBlock();
 }
 
 @end
