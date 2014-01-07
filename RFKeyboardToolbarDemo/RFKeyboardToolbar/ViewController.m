@@ -28,7 +28,7 @@
     
     RFToolbarButton *exampleButton = [RFToolbarButton buttonWithTitle:@"Example"];
     
-    [exampleButton setButtonPressedBlock:^{
+    [exampleButton addEventHandler:^{
         [_textView insertText:@"You pressed a button!"];
     } forControlEvents:UIControlEventTouchUpInside];
     
