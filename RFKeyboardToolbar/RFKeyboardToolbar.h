@@ -6,11 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RFToolbarButton.h"
 
-@interface RFKeyboardToolbar : UIView <UITextViewDelegate, UITextFieldDelegate>
+@interface RFKeyboardToolbar : UIView
 
-+(void)addToTextView:(UITextView*)textView withButtons:(NSArray*)buttons;
-+(void)addToTextField:(UITextField*)textField withButtons:(NSArray*)buttons;
++ (instancetype)toolbarViewWithButtons:(NSArray *)buttons;
 
 @end
