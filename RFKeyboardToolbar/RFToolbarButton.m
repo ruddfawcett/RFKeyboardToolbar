@@ -10,7 +10,7 @@
 @interface RFToolbarButton ()
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, copy) buttonPressBlock buttonPressBlock;
+@property (nonatomic, copy) eventHandlerBlock buttonPressBlock;
 
 @end
 
@@ -46,8 +46,8 @@
     return self;
 }
 
-- (void)setButtonPressedBlock:(buttonPressBlock)completionBlock forControlEvents:(UIControlEvents)controlEvent {
-    self.buttonPressBlock = completionBlock;
+- (void)addEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvent {
+    self.buttonPressBlock = eventHandler;
     [self addTarget:self action:@selector(buttonPressed) forControlEvents:controlEvent];
 }
 
