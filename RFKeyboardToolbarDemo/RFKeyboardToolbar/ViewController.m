@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "RFKeyboardToolbar.h"
+#import "RFToolbarButton.h"
 
 @interface ViewController ()
 
@@ -22,23 +24,17 @@
     
     self.title = @"RFKeyboardToolbar";
     
-    RFToolbarButton *exampleButton = [RFToolbarButton buttonWithTitle:@"Example"];
-    
     _textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     
-    [RFKeyboardToolbar addToTextView:_textView withButtons:@[exampleButton]];
+    RFToolbarButton *exampleButton = [RFToolbarButton buttonWithTitle:@"Example"];
     
-    [exampleButton setButtonPressedTextViewBlock:^(UITextView *textField) {
-                textView.text = @"you pressed the button!";
-            }];
+    [exampleButton setButtonPressedBlock:^{
+        [_textView insertText:@"You pressed a button!"];
+    } forControlEvents:UIControlEventTouchUpInside];
     
+    _textView.inputAccessoryView = [RFKeyboardToolbar toolbarViewWithButtons:@[exampleButton]];
+        
     [self.view addSubview:_textView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
