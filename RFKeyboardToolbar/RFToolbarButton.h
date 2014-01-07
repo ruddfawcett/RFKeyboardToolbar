@@ -7,12 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^buttonPressBlock)();
+typedef void (^eventHandlerBlock)();
 
 @interface RFToolbarButton : UIButton
 
 + (instancetype)buttonWithTitle:(NSString *)title;
 
-- (void)setButtonPressedBlock:(buttonPressBlock)completionBlock forControlEvents:(UIControlEvents)controlEvent;
+- (void)addEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvent;
 
 @end
