@@ -54,6 +54,10 @@ Hope you enjoy it!  Please Fork and send Pull Requests!
 ![RFMarkdownTextView](http://i.imgur.com/NEAocbW.png)
 ![RFKeyboardToolbarDemo](http://i.imgur.com/LvD0GqC.png)
 
+##Contributors
+- [Rex Finn (rexfinn)] (https://github.com/rexfinn) - Creator (Version 1.0)
+- [Brandon Butler (Hackmodford)] (https://github.com/Hackmodford) - Heavy Contributor (Version 1.1)
+
 ##License
 
 The MIT License (MIT)
