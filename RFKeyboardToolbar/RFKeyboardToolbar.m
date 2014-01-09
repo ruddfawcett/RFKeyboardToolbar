@@ -69,7 +69,6 @@
     
     for (RFToolbarButton *eachButton in _buttonsToAdd) {
         originFrame = CGRectMake(originX, 0, eachButton.frame.size.width, eachButton.frame.size.height);
-        
         eachButton.frame = originFrame;
         
         [_scrollView addSubview:eachButton];
