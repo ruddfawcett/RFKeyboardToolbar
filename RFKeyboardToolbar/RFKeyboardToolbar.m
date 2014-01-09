@@ -60,15 +60,16 @@
     _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.contentInset = UIEdgeInsetsMake(6.0f, 7.0f, 7.0f, 6.0f);
+    _scrollView.contentInset = UIEdgeInsetsMake(6.0f, 0.0f, 8.0f, 6.0f);
     
     NSUInteger index = 0;
-    NSUInteger originX = 0;
+    NSUInteger originX = 8;
     
     CGRect originFrame;
     
     for (RFToolbarButton *eachButton in _buttonsToAdd) {
         originFrame = CGRectMake(originX, 0, eachButton.frame.size.width, eachButton.frame.size.height);
+        
         eachButton.frame = originFrame;
         
         [_scrollView addSubview:eachButton];
