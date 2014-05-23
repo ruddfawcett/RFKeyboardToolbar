@@ -55,14 +55,14 @@ Hope you enjoy it!  Please Fork and send Pull Requests!
 ![RFKeyboardToolbarDemo](http://i.imgur.com/LvD0GqC.png)
 
 ##Contributors
-- [Rex Finn (rexfinn)] (https://github.com/rexfinn) - Creator (Version 1.0)
-- [Brandon Butler (Hackmodford)] (https://github.com/Hackmodford) - Heavy Contributor (Version 1.1)
+- [Rudd Fawcett (@ruddfawcett)] (https://github.com/ruddfawcett) - Creator (Version 1.0)
+- [Brandon Butler (@Hackmodford)] (https://github.com/Hackmodford) - Heavy Contributor (Version 1.1)
 
 ##License
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Rex Finn
+Copyright (c) 2013 Rudd Fawcett
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
