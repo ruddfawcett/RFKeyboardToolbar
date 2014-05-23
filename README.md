@@ -13,7 +13,7 @@ This is a flexible UIView and UIButton subclass to add customized buttons and to
 
 ```ruby
 platform :ios, '7.0'
-pod "RFKeyboardToolbar", "~> 1.1"
+pod "RFKeyboardToolbar", "~> 1.2"
 ```
 
 ### Installation without CocoaPods
