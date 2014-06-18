@@ -57,6 +57,7 @@ Hope you enjoy it!  Please Fork and send Pull Requests!
 ##Contributors
 - [Rudd Fawcett (@ruddfawcett)] (https://github.com/ruddfawcett) - Creator (Version 1.0)
 - [Brandon Butler (@Hackmodford)] (https://github.com/Hackmodford) - Heavy Contributor (Version 1.1)
+- [Jesús A. Álvarez (@zydeco)] (https://github.com/zydeco) - Contributor
 
 ##License
 
