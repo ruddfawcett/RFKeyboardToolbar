@@ -13,7 +13,6 @@
 @property (nonatomic,strong) UIView *toolbarView;
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) CALayer *topBorder;
-@property (nonatomic,strong) NSArray *buttonsToAdd;
 
 @end
 
@@ -26,7 +25,7 @@
 - (id)initWithButtons:(NSArray*)buttons {
     self = [super initWithFrame:CGRectMake(0, 0, self.window.rootViewController.view.bounds.size.width, 40)];
     if (self) {
-        _buttonsToAdd = buttons;
+        _buttons = [buttons copy];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self addSubview:[self inputAccessoryView]];
     }
@@ -62,12 +61,19 @@
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.contentInset = UIEdgeInsetsMake(6.0f, 0.0f, 8.0f, 6.0f);
     
+    [self addButtons];
+    
+    return _scrollView;
+}
+
+- (void)addButtons
+{
     NSUInteger index = 0;
     NSUInteger originX = 8;
     
     CGRect originFrame;
     
-    for (RFToolbarButton *eachButton in _buttonsToAdd) {
+    for (RFToolbarButton *eachButton in _buttons) {
         originFrame = CGRectMake(originX, 0, eachButton.frame.size.width, eachButton.frame.size.height);
         eachButton.frame = originFrame;
         
@@ -80,8 +86,66 @@
     CGSize contentSize = _scrollView.contentSize;
     contentSize.width = originX - 8;
     _scrollView.contentSize = contentSize;
+}
+
+- (void)setButtons:(NSArray*)buttons
+{
+    [_buttons makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    _buttons = [buttons copy];
+    [self addButtons];
+}
+
+- (void)setButtons:(NSArray *)buttons animated:(BOOL)animated
+{
+    if (animated == NO)
+    {
+        self.buttons = buttons;
+        return;
+    }
     
-    return _scrollView;
+    NSMutableSet *removeButtons = [NSMutableSet setWithArray:_buttons];
+    [removeButtons minusSet:[NSSet setWithArray:buttons]];
+    NSMutableSet *addButtons = [NSMutableSet setWithArray:buttons];
+    [addButtons minusSet:[NSSet setWithArray:_buttons]];
+    _buttons = [buttons copy];
+    
+    // calculate end frames
+    NSUInteger originX = 8;
+    NSUInteger index = 0;
+    NSMutableArray *buttonFrames = [NSMutableArray arrayWithCapacity:_buttons.count];
+    for (RFToolbarButton *button in _buttons) {
+        CGRect frame = CGRectMake(originX, 0, button.frame.size.width, button.frame.size.height);
+        [buttonFrames addObject:[NSValue valueWithCGRect:frame]];
+        
+        originX += button.bounds.size.width + 8;
+        index++;
+    }
+    
+    CGSize contentSize = _scrollView.contentSize;
+    contentSize.width = originX - 8;
+    if (contentSize.width > _scrollView.contentSize.width)
+        _scrollView.contentSize = contentSize;
+    
+    // make added buttons appear from the right
+    [addButtons enumerateObjectsUsingBlock:^(RFToolbarButton *button, BOOL *stop) {
+        button.frame = CGRectMake(originX, 0, button.frame.size.width, button.frame.size.height);
+        [_scrollView addSubview:button];
+    }];
+    
+    // animate
+    [UIView animateWithDuration:0.2 animations:^{
+        [removeButtons enumerateObjectsUsingBlock:^(RFToolbarButton *button, BOOL *stop) {
+            button.alpha = 0;
+        }];
+        
+        [_buttons enumerateObjectsUsingBlock:^(RFToolbarButton *button, NSUInteger idx, BOOL *stop) {
+            button.frame = [buttonFrames[idx] CGRectValue];
+        }];
+        
+        _scrollView.contentSize = contentSize;
+    } completion:^(BOOL finished) {
+        [removeButtons makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    }];
 }
 
 @end

@@ -9,6 +9,10 @@
 
 @interface RFKeyboardToolbar : UIView
 
+@property (nonatomic, strong) NSArray *buttons;
+
 + (instancetype)toolbarViewWithButtons:(NSArray *)buttons;
+
+- (void)setButtons:(NSArray *)buttons animated:(BOOL)animated;
 
 @end
