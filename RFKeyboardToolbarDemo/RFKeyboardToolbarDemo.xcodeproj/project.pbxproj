@@ -20,7 +20,6 @@
 		CEEF0E44184E157600B7DEDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEF0E26184E157600B7DEDF /* UIKit.framework */; };
 		CEEF0E4C184E157600B7DEDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEEF0E4A184E157600B7DEDF /* InfoPlist.strings */; };
 		CEEF0E4E184E157600B7DEDF /* RFKeyboardToolbarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E4D184E157600B7DEDF /* RFKeyboardToolbarTests.m */; };
-		CEEF0E69184E9AC400B7DEDF /* RFExampleToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E68184E9AC400B7DEDF /* RFExampleToolbarButton.m */; };
 		CEEF0E71184E9AED00B7DEDF /* RFKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E6E184E9AED00B7DEDF /* RFKeyboardToolbar.m */; };
 		CEEF0E72184E9AED00B7DEDF /* RFToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E70184E9AED00B7DEDF /* RFToolbarButton.m */; };
 /* End PBXBuildFile section */
@@ -54,8 +53,6 @@
 		CEEF0E49184E157600B7DEDF /* RFKeyboardToolbarDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RFKeyboardToolbarDemoTests-Info.plist"; sourceTree = "<group>"; };
 		CEEF0E4B184E157600B7DEDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CEEF0E4D184E157600B7DEDF /* RFKeyboardToolbarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFKeyboardToolbarTests.m; sourceTree = "<group>"; };
-		CEEF0E67184E9AC400B7DEDF /* RFExampleToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFExampleToolbarButton.h; sourceTree = "<group>"; };
-		CEEF0E68184E9AC400B7DEDF /* RFExampleToolbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFExampleToolbarButton.m; sourceTree = "<group>"; };
 		CEEF0E6D184E9AED00B7DEDF /* RFKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFKeyboardToolbar.h; sourceTree = "<group>"; };
 		CEEF0E6E184E9AED00B7DEDF /* RFKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFKeyboardToolbar.m; sourceTree = "<group>"; };
 		CEEF0E6F184E9AED00B7DEDF /* RFToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFToolbarButton.h; sourceTree = "<group>"; };
@@ -123,8 +120,6 @@
 				CEEF0E32184E157600B7DEDF /* AppDelegate.m */,
 				CEEF0E37184E157600B7DEDF /* ViewController.h */,
 				CEEF0E38184E157600B7DEDF /* ViewController.m */,
-				CEEF0E67184E9AC400B7DEDF /* RFExampleToolbarButton.h */,
-				CEEF0E68184E9AC400B7DEDF /* RFExampleToolbarButton.m */,
 				CEEF0E3A184E157600B7DEDF /* Images.xcassets */,
 				CEEF0E6C184E9AED00B7DEDF /* RFKeyboardToolbar */,
 				CEEF0E29184E157600B7DEDF /* Supporting Files */,
@@ -273,7 +268,6 @@
 				CEEF0E39184E157600B7DEDF /* ViewController.m in Sources */,
 				CEEF0E72184E9AED00B7DEDF /* RFToolbarButton.m in Sources */,
 				CEEF0E33184E157600B7DEDF /* AppDelegate.m in Sources */,
-				CEEF0E69184E9AC400B7DEDF /* RFExampleToolbarButton.m in Sources */,
 				CEEF0E71184E9AED00B7DEDF /* RFKeyboardToolbar.m in Sources */,
 				CEEF0E2F184E157600B7DEDF /* main.m in Sources */,
 			);
