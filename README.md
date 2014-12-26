@@ -13,7 +13,7 @@ This is a flexible UIView and UIButton subclass to add customized buttons and to
 
 ```ruby
 platform :ios, '7.0'
-pod "RFKeyboardToolbar", "~> 1.2"
+pod "RFKeyboardToolbar", "~> 1.3"
 ```
 
 ### Installation without CocoaPods
@@ -33,17 +33,17 @@ I've commented on the initialization below, to help you get a better understandi
 ```obj-c
 // Create a new RFToolbarButton
 RFToolbarButton *exampleButton = [RFToolbarButton buttonWithTitle:@"Example"];
-    
+
 // Add a button target to the exampleButton
 [exampleButton addEventHandler:^{
     // Add any action
     [_textView insertText:@"You pressed a button!"];
 } forControlEvents:UIControlEventTouchUpInside];
-    
-// Create an RFKeyboardToolbar, adding all of your buttons, and set it as your inputAcessoryView
-_textView.inputAccessoryView = [RFKeyboardToolbar toolbarViewWithButtons:@[exampleButton]];
 
-// Add the UITextView/UITextField   
+// Create an RFKeyboardToolbar, adding all of your buttons, and set it as your inputAcessoryView
+_textView.inputAccessoryView = [RFKeyboardToolbar toolbarWithButtons:@[exampleButton]];
+
+// Add the UITextView/UITextField
 [self.view addSubview:_textView];
 ```
 
@@ -55,7 +55,7 @@ Hope you enjoy it!  Please Fork and send Pull Requests!
 ![RFKeyboardToolbarDemo](http://i.imgur.com/LvD0GqC.png)
 
 ##Contributors
-- [Rudd Fawcett (@ruddfawcett)] (https://github.com/ruddfawcett) - Creator (Version 1.0)
+- [Rudd Fawcett (@ruddfawcett)] (https://github.com/ruddfawcett) - Creator
 - [Brandon Butler (@Hackmodford)] (https://github.com/Hackmodford) - Heavy Contributor (Version 1.1)
 - [Jesús A. Álvarez (@zydeco)] (https://github.com/zydeco) - Contributor
 
@@ -63,7 +63,7 @@ Hope you enjoy it!  Please Fork and send Pull Requests!
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Rudd Fawcett
+Copyright (c) 2015 Rudd Fawcett
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
