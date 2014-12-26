@@ -9,7 +9,14 @@
 
 @interface RFToolbarButton ()
 
+/**
+ *  The button's title.
+ */
 @property (nonatomic, strong) NSString *title;
+
+/**
+ *  The button's event block.
+ */
 @property (nonatomic, copy) eventHandlerBlock buttonPressBlock;
 
 @end
@@ -20,17 +27,22 @@
     return [[self alloc] initWithTitle:title];
 }
 
++ (instancetype)buttonWithTitle:(NSString *)title andEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvent {
+    RFToolbarButton *newButton = [RFToolbarButton buttonWithTitle:title];
+    [newButton addEventHandler:eventHandler forControlEvents:controlEvent];
+    
+    return newButton;
+}
+
 - (id)initWithTitle:(NSString *)title {
     _title = title;
     return [self init];
 }
 
-- (id)init
-{
+- (id)init {
     CGSize sizeOfText = [self.title sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:14.f]}];
     
-    self = [super initWithFrame:CGRectMake(0, 0, sizeOfText.width + 18.104, sizeOfText.height + 10.298)];
-    if (self) {
+    if (self = [super initWithFrame:CGRectMake(0, 0, sizeOfText.width + 18.104, sizeOfText.height + 10.298)]) {
         self.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.0];
         
         self.layer.cornerRadius = 3.0f;

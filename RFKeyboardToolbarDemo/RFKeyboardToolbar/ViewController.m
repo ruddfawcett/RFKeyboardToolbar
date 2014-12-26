@@ -8,18 +8,17 @@
 
 #import "ViewController.h"
 #import "RFKeyboardToolbar.h"
-#import "RFToolbarButton.h"
 
 @interface ViewController ()
 
-@property (nonatomic,strong) UITextView *textView;
+@property (strong, nonatomic) UITextView *textView;
+@property (strong, nonatomic) RFKeyboardToolbar *keyboardToolbar;
 
 @end
 
 @implementation UITextView (InsertWord)
 
-- (void)insertWord:(NSString*)word
-{
+- (void)insertWord:(NSString*)word {
     // insert a word into the field, adding a space before and/or after it as necessary
     NSCharacterSet *whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSRange selectedRange = self.selectedRange;
@@ -36,9 +35,6 @@
 @end
 
 @implementation ViewController
-{
-    RFKeyboardToolbar *keyboardToolbar;
-}
 
 - (void)viewDidLoad
 {
@@ -48,21 +44,27 @@
     
     _textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     
-    RFToolbarButton *exampleButton = [RFToolbarButton buttonWithTitle:@"Example"];
+    NSMutableArray *buttons = NSMutableArray.array;
     
-    [exampleButton addEventHandler:^{
-        [_textView insertText:@"You pressed a button!"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
+    [numberFormatter setNumberStyle:NSNumberFormatterSpellOutStyle];
     
-    keyboardToolbar = [RFKeyboardToolbar toolbarViewWithButtons:@[exampleButton]];
-    _textView.inputAccessoryView = keyboardToolbar;
+    for (int i = 1; i <= 20; i++) {
+        RFToolbarButton *button = [RFToolbarButton buttonWithTitle:[numberFormatter stringFromNumber:@(i)] andEventHandler:^{
+            [_textView insertText:@"You pressed a button!"];
+        } forControlEvents:UIControlEventTouchUpInside];
+        
+        [buttons addObject:button];
+    }
+    
+    _keyboardToolbar = [RFKeyboardToolbar toolbarWithButtons:buttons];
+    _textView.inputAccessoryView = _keyboardToolbar;
     _textView.delegate = self;
     
     [self.view addSubview:_textView];
 }
 
-- (void)textViewDidChange:(UITextView *)textView
-{
+- (void)textViewDidChange:(UITextView *)textView {
     // count words
     NSArray *allWords = [textView.text.lowercaseString componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSCountedSet *words = [NSCountedSet new];
@@ -73,7 +75,7 @@
     }
     
     // dictionary of existing words => buttons
-    NSDictionary *oldButtons = [NSDictionary dictionaryWithObjects:keyboardToolbar.buttons forKeys:[keyboardToolbar.buttons valueForKey:@"title"]];
+    NSDictionary *oldButtons = [NSDictionary dictionaryWithObjects:_keyboardToolbar.buttons forKeys:[_keyboardToolbar.buttons valueForKey:@"title"]];
     
     // create new buttons
     NSMutableArray *newButtons = [NSMutableArray arrayWithCapacity:words.count];
@@ -96,7 +98,7 @@
         if (count1 == count2) return [[obj1 title] compare:[obj2 title]];
         return count1 > count2 ? NSOrderedAscending : NSOrderedDescending;
     }];
-    [keyboardToolbar setButtons:newButtons animated:YES];
+    [_keyboardToolbar setButtons:newButtons animated:YES];
 }
 
 @end

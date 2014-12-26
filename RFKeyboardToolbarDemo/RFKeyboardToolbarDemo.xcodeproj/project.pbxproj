@@ -15,24 +15,9 @@
 		CEEF0E33184E157600B7DEDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E32184E157600B7DEDF /* AppDelegate.m */; };
 		CEEF0E39184E157600B7DEDF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E38184E157600B7DEDF /* ViewController.m */; };
 		CEEF0E3B184E157600B7DEDF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEF0E3A184E157600B7DEDF /* Images.xcassets */; };
-		CEEF0E42184E157600B7DEDF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEF0E41184E157600B7DEDF /* XCTest.framework */; };
-		CEEF0E43184E157600B7DEDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEF0E22184E157600B7DEDF /* Foundation.framework */; };
-		CEEF0E44184E157600B7DEDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEF0E26184E157600B7DEDF /* UIKit.framework */; };
-		CEEF0E4C184E157600B7DEDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEEF0E4A184E157600B7DEDF /* InfoPlist.strings */; };
-		CEEF0E4E184E157600B7DEDF /* RFKeyboardToolbarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E4D184E157600B7DEDF /* RFKeyboardToolbarTests.m */; };
 		CEEF0E71184E9AED00B7DEDF /* RFKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E6E184E9AED00B7DEDF /* RFKeyboardToolbar.m */; };
 		CEEF0E72184E9AED00B7DEDF /* RFToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF0E70184E9AED00B7DEDF /* RFToolbarButton.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CEEF0E45184E157600B7DEDF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEEF0E17184E157600B7DEDF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEEF0E1E184E157600B7DEDF;
-			remoteInfo = RFKeyboardToolbar;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CEEF0E1F184E157600B7DEDF /* RFKeyboardToolbarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFKeyboardToolbarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +33,6 @@
 		CEEF0E37184E157600B7DEDF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CEEF0E38184E157600B7DEDF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CEEF0E3A184E157600B7DEDF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CEEF0E40184E157600B7DEDF /* RFKeyboardToolbarDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RFKeyboardToolbarDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEF0E41184E157600B7DEDF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CEEF0E49184E157600B7DEDF /* RFKeyboardToolbarDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RFKeyboardToolbarDemoTests-Info.plist"; sourceTree = "<group>"; };
 		CEEF0E4B184E157600B7DEDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -70,16 +54,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEEF0E3D184E157600B7DEDF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEEF0E42184E157600B7DEDF /* XCTest.framework in Frameworks */,
-				CEEF0E44184E157600B7DEDF /* UIKit.framework in Frameworks */,
-				CEEF0E43184E157600B7DEDF /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -97,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				CEEF0E1F184E157600B7DEDF /* RFKeyboardToolbarDemo.app */,
-				CEEF0E40184E157600B7DEDF /* RFKeyboardToolbarDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,24 +162,6 @@
 			productReference = CEEF0E1F184E157600B7DEDF /* RFKeyboardToolbarDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CEEF0E3F184E157600B7DEDF /* RFKeyboardToolbarDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEEF0E54184E157600B7DEDF /* Build configuration list for PBXNativeTarget "RFKeyboardToolbarDemoTests" */;
-			buildPhases = (
-				CEEF0E3C184E157600B7DEDF /* Sources */,
-				CEEF0E3D184E157600B7DEDF /* Frameworks */,
-				CEEF0E3E184E157600B7DEDF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CEEF0E46184E157600B7DEDF /* PBXTargetDependency */,
-			);
-			name = RFKeyboardToolbarDemoTests;
-			productName = RFKeyboardToolbarTests;
-			productReference = CEEF0E40184E157600B7DEDF /* RFKeyboardToolbarDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,11 +170,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Rex Finn";
-				TargetAttributes = {
-					CEEF0E3F184E157600B7DEDF = {
-						TestTargetID = CEEF0E1E184E157600B7DEDF;
-					};
-				};
 			};
 			buildConfigurationList = CEEF0E1A184E157600B7DEDF /* Build configuration list for PBXProject "RFKeyboardToolbarDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -235,7 +185,6 @@
 			projectRoot = "";
 			targets = (
 				CEEF0E1E184E157600B7DEDF /* RFKeyboardToolbarDemo */,
-				CEEF0E3F184E157600B7DEDF /* RFKeyboardToolbarDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,14 +196,6 @@
 			files = (
 				CEEF0E3B184E157600B7DEDF /* Images.xcassets in Resources */,
 				CEEF0E2D184E157600B7DEDF /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEF0E3E184E157600B7DEDF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEEF0E4C184E157600B7DEDF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,23 +214,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEEF0E3C184E157600B7DEDF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEEF0E4E184E157600B7DEDF /* RFKeyboardToolbarTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CEEF0E46184E157600B7DEDF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEEF0E1E184E157600B7DEDF /* RFKeyboardToolbarDemo */;
-			targetProxy = CEEF0E45184E157600B7DEDF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CEEF0E2B184E157600B7DEDF /* InfoPlist.strings */ = {
@@ -389,7 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RFKeyboardToolbar/RFKeyboardToolbarDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "RFKeyboardToolbar/RFKeyboardToolbarDemo-Info.plist";
 				PRODUCT_NAME = RFKeyboardToolbarDemo;
 				WRAPPER_EXTENSION = app;
@@ -402,52 +327,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RFKeyboardToolbar/RFKeyboardToolbarDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "RFKeyboardToolbar/RFKeyboardToolbarDemo-Info.plist";
 				PRODUCT_NAME = RFKeyboardToolbarDemo;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		CEEF0E55184E157600B7DEDF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RFKeyboardToolbar.app/RFKeyboardToolbar";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RFKeyboardToolbar/RFKeyboardToolbar-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "RFKeyboardToolbarTests/RFKeyboardToolbarDemoTests-Info.plist";
-				PRODUCT_NAME = RFKeyboardToolbarDemoTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		CEEF0E56184E157600B7DEDF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RFKeyboardToolbar.app/RFKeyboardToolbar";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RFKeyboardToolbar/RFKeyboardToolbar-Prefix.pch";
-				INFOPLIST_FILE = "RFKeyboardToolbarTests/RFKeyboardToolbarDemoTests-Info.plist";
-				PRODUCT_NAME = RFKeyboardToolbarDemoTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -468,15 +351,6 @@
 			buildConfigurations = (
 				CEEF0E52184E157600B7DEDF /* Debug */,
 				CEEF0E53184E157600B7DEDF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEEF0E54184E157600B7DEDF /* Build configuration list for PBXNativeTarget "RFKeyboardToolbarDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEEF0E55184E157600B7DEDF /* Debug */,
-				CEEF0E56184E157600B7DEDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

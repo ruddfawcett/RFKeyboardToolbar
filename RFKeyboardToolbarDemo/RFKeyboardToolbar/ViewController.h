@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class RFKeyboardToolbar;
+
 @interface ViewController : UIViewController <UITextViewDelegate>
 
 @end
