@@ -2,7 +2,7 @@ RFKeyboardToolbar<br /> [![RFGravatarImageView Version](http://img.shields.io/co
 ====================
 This is a flexible UIView and UIButton subclass to add customized buttons and toolbars to your UITextFields/UITextViews.  This project was inspired by the toolbar seen in [iOctocat](http://ioctocat.com).
 
-##Installation
+## Installation
 
 ### Installation with CocoaPods
 
@@ -48,15 +48,15 @@ _textView.inputAccessoryView = [RFKeyboardToolbar toolbarWithButtons:@[exampleBu
 
 Hope you enjoy it!  Please Fork and send Pull Requests!
 
-##Screenshots
+## Screenshots
 
 ![RFMarkdownTextView](http://i.imgur.com/NEAocbW.png)
 
-##Contributors
+## Contributors
 - [Rudd Fawcett (@ruddfawcett)] (https://github.com/ruddfawcett) - Creator
 - [Brandon Butler (@Hackmodford)] (https://github.com/Hackmodford)
 - [Jesús A. Álvarez (@zydeco)] (https://github.com/zydeco)
 
-##License
+## License
 
 RFKeyboardToolbar is available under the MIT license. See the LICENSE file for more info.
